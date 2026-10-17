@@ -1,6 +1,8 @@
 {
   "name": "reckless-scroll",
-  "owner": { "name": "recklessplyer" },
+  "owner": {
+    "name": "recklessplyer"
+  },
   "plugins": [
     {
       "name": "reckless",

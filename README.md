@@ -2,7 +2,7 @@
 
 **A Claude Code skill for scroll-driven websites that take real risks on the surface and stay rigorous underneath.**
 
-Made by **recklessplyer**. MIT.
+Made by **recklessplyer** ([github.com/recklessrashdan](https://github.com/recklessrashdan)). MIT.
 
 Most generated scroll sites are either safe and forgettable, or flashy with unreadable text and dead scroll. Reckless Scroll spends a fixed **risk budget** (three bold moves per build), engineers **one peak**, and then **audits itself in a real browser** before it calls the page done.
 
@@ -18,10 +18,10 @@ Most generated scroll sites are either safe and forgettable, or flashy with unre
 
 ## Install (Claude Code)
 
-Push this folder to GitHub as `recklessplyer/reckless-scroll` (or edit the path below), then:
+Add the marketplace, then install the plugin (run each command on its own line inside Claude Code):
 
 ```
-/plugin marketplace add recklessplyer/reckless-scroll
+/plugin marketplace add recklessrashdan/reckless-scroll
 /plugin install reckless@reckless-scroll
 ```
 
