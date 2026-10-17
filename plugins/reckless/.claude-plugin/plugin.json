@@ -1,0 +1,8 @@
+{
+  "name": "reckless",
+  "version": "0.1.0",
+  "description": "Reckless Scroll: build scroll-driven websites that take big risks on the surface and stay rigorous underneath, then audit them in a real browser.",
+  "author": { "name": "recklessplyer" },
+  "license": "MIT",
+  "keywords": ["scroll", "scrollytelling", "web-design", "agent-skill", "claude-code"]
+}

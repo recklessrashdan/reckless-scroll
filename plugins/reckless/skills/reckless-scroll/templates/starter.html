@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replace me</title>
+<!-- Copy engine/reckless-scroll.css and .js next to this file. Never edit them. -->
+<link rel="stylesheet" href="reckless-scroll.css">
+<style>
+  /* Six colour roles, two fonts. Theme here, not in the engine. */
+  :root {
+    --bg: #e9e9ec;       /* page ground */
+    --surface: #ffffff;  /* panels */
+    --ink: #1a1a22;      /* primary text */
+    --mute: #55555f;     /* secondary text, tinted not flat grey */
+    --line: #c4c4cc;     /* rules */
+    --accent: #e5121f;   /* the one accent */
+    --display: "Helvetica Neue", Arial, sans-serif;  /* swap for a real display face */
+    --text: Georgia, "Times New Roman", serif;        /* swap for a real text face */
+    --gap: clamp(1rem, 4vw, 3rem);
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 1.125rem/1.6 var(--text); }
+  h1, h2 { font-family: var(--display); line-height: 0.95; letter-spacing: -0.03em; margin: 0; }
+  h1 { font-size: clamp(3rem, 11vw, 9rem); }
+  h2 { font-size: clamp(2rem, 6vw, 4.5rem); letter-spacing: -0.02em; }
+  p { max-width: 58ch; color: var(--mute); margin: 1.25rem 0 0; }
+  .screen { padding: var(--gap); display: flex; flex-direction: column; justify-content: center; height: 100%; }
+  .inverted { background: var(--ink); color: var(--bg); }
+  .inverted p { color: #c9c9d2; }
+  .rail .panel { flex: 0 0 min(80vw, 34rem); padding: var(--gap); display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--line); }
+  .rail .panel:nth-child(even) { background: var(--surface); }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  a.cta { display: inline-block; margin-top: 2rem; padding: 0.9rem 1.4rem; background: var(--accent); color: #fff; font: 700 1rem var(--display); text-decoration: none; }
+
+  /* SIGNATURE MOVE: replace this with one interaction that exists on this site alone.
+     Demo: the accent block leans toward the pointer. Drive anything bespoke off --rs-p, --rs-t, --rs-x, --rs-y. */
+  .sig { position: absolute; right: var(--gap); bottom: var(--gap); width: clamp(5rem, 14vw, 11rem); aspect-ratio: 1;
+         background: var(--accent); transform: translate(calc(var(--rs-x) * -1.2rem), calc(var(--rs-y) * -1.2rem)) rotate(calc(var(--rs-p) * 90deg)); }
+</style>
+</head>
+<body>
+
+<!-- ACT 1: hero. Pinned for 220vh while the headline assembles. -->
+<section id="open" data-rs-stage style="--rs-length:220">
+  <div class="rs-sticky">
+    <div class="screen">
+      <h1 data-rs-split data-rs-at="0.05,0.45">Say the one thing</h1>
+      <p class="rs-rise" data-rs-at="0.45,0.65">One supporting sentence that earns the scroll. Replace it with real copy.</p>
+    </div>
+    <div class="sig" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ACT 2: sideways rail. Vertical scroll pans the track. -->
+<section id="proof" class="rail" data-rs-stage style="--rs-length:320">
+  <div class="rs-sticky">
+    <div data-rs-track>
+      <div class="panel"><h2>First proof</h2><p>Real content only. No invented numbers.</p></div>
+      <div class="panel"><h2>Second proof</h2><p>Each panel changes the feeling of the one before it.</p></div>
+      <div class="panel"><h2>Third proof</h2><p>The rail ends when the argument ends.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACT 3: the engineered peak. Hard cut to an inverted ground, most scroll room, quiet before it.
+     For a film: <canvas data-rs-frames="frames/f%04d.jpg" data-rs-count="120"></canvas> inside .rs-sticky -->
+<section id="peak" class="inverted" data-rs-stage style="--rs-length:420">
+  <div class="rs-sticky">
+    <div class="screen">
+      <h2 class="rs-scale" data-rs-at="0.0,0.35">The peak lives here</h2>
+      <p class="rs-fade" data-rs-at="0.35,0.55">Give this act the asset budget and the longest hold.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACT 4: the close. A normal page again: calm, one action. -->
+<section id="close">
+  <div class="screen" style="min-height:70svh">
+    <h2>Now do the thing</h2>
+    <p>One action, stated plainly.</p>
+    <a class="cta" href="#open">Start here</a>
+  </div>
+</section>
+
+<script src="reckless-scroll.js"></script>
+</body>
+</html>

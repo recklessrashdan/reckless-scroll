@@ -1,0 +1,35 @@
+/* Reckless Scroll engine v0.1.0 | recklessplyer | MIT
+   Mechanism only. Never edit per project: theme with your own CSS on top. */
+
+:root { --rs-p: 0; --rs-x: 0; --rs-y: 0; }
+
+/* A stage is a tall box. Its sticky child is the "screen" you scroll through. */
+[data-rs-stage] { position: relative; height: calc(var(--rs-length, 300) * 1svh); }
+[data-rs-stage] > .rs-sticky { position: sticky; top: 0; height: 100svh; overflow: clip; }
+
+[data-rs-track] { display: flex; height: 100%; will-change: transform; }
+canvas[data-rs-frames] { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+/* Cue state. JS writes --rs-t (0 to 1) on every [data-rs-at] element. */
+[data-rs-at] { --rs-t: 0; }
+.rs-fade  { opacity: var(--rs-t); }
+.rs-rise  { opacity: var(--rs-t); transform: translateY(calc((1 - var(--rs-t)) * 4rem)); }
+.rs-wipe  { clip-path: inset(0 calc((1 - var(--rs-t)) * 100%) 0 0); }
+.rs-scale { transform: scale(calc(0.85 + var(--rs-t) * 0.15)); }
+
+/* Headline assembled word by word. Needs data-rs-split and data-rs-at. */
+[data-rs-split] .rs-w { display: inline-block; overflow: clip; vertical-align: top; padding-bottom: 0.1em; }
+[data-rs-split] .rs-w > span {
+  display: inline-block;
+  --k: clamp(0, calc(var(--rs-t, 0) * (var(--n) + 2) - var(--i)), 1);
+  opacity: var(--k);
+  transform: translateY(calc((1 - var(--k)) * 110%));
+}
+
+/* Reduced motion: no pinning, no scrubbing, everything visible and readable. */
+@media (prefers-reduced-motion: reduce) {
+  [data-rs-stage] { height: auto; }
+  [data-rs-stage] > .rs-sticky { position: relative; height: auto; min-height: 100svh; overflow: visible; }
+  [data-rs-track] { flex-wrap: wrap; transform: none !important; }
+  [data-rs-at] { --rs-t: 1 !important; }
+}

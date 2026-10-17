@@ -1,0 +1,11 @@
+{
+  "name": "reckless-scroll",
+  "owner": { "name": "recklessplyer" },
+  "plugins": [
+    {
+      "name": "reckless",
+      "source": "./plugins/reckless",
+      "description": "Reckless Scroll: a skill for scroll-driven websites that take big risks and still pass an audit."
+    }
+  ]
+}
