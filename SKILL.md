@@ -7,7 +7,7 @@ description: Build premium scroll-driven websites (pinned stories, horizontal ra
 
 Reckless on the surface, rigorous underneath. The page may do something bold. It may not have unreadable text, dead scroll, or a layout that breaks on a phone. You prove that in a real browser before you say you are done.
 
-Created by recklessplyer. MIT.
+Created by recklessplyer. MIT. `<skill>` below means the folder this SKILL.md lives in (for example `~/.claude/skills/reckless-scroll`).
 
 ## The rules that outrank everything else
 
